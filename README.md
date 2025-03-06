@@ -8,9 +8,11 @@ Este projeto foi desenvolvido com o objetivo de **melhorar a produção da empre
 - **Repassar**
 - **Uniforme**
 
+O **Controlador** possui uma interface gráfica intuitiva com botões dedicados que executam cada um dos scripts, permitindo ao usuário iniciar os processos com um simples clique.
+
 ![4](https://github.com/user-attachments/assets/0a00e3b1-73e1-4853-b95a-f4049944c219)
 
-Além disso, há recursos adicionais como **slider** (para controlar velocidade de execução em alguns scripts), **botão de interromper scripts** e **botão para minimizar para a bandeja**.
+Além disso, há recursos adicionais como **slider** (para controlar a velocidade de execução em alguns scripts), **botão de interromper scripts** e **botão para minimizar para a bandeja**.
 
 ---
 
@@ -18,8 +20,8 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 
 ![ColocarQuantidade](https://github.com/user-attachments/assets/95dd790a-8f16-4fa8-8f2b-719dc0566c9d)
 
-> **Função**: Facilitar a colocação de quantidades em um programa específico (que prepara arquivos para impressão).  
-> **Observação**: Este script depende de **coordenadas fixas** (via PyAutoGUI), então **pode apresentar erros** em outros computadores com resoluções diferentes. No futuro, a ideia é ajustar para torná-lo mais universal.
+> **Função**: Facilitar a impressão dos arquivos através de um programa específico.  
+> **Observação**: Este script depende de **coordenadas fixas** (via PyAutoGUI), podendo apresentar erros em outros computadores com resoluções diferentes. No futuro, a ideia é ajustá-lo para torná-lo mais universal.
 
 ---
 
@@ -28,8 +30,8 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 ![Encaixar](https://github.com/user-attachments/assets/cf4730c3-c662-4d29-be86-4f2f893a10bd)
 
 > **Função**: Pegar o mockup (enviado ao cliente, em vetor e com nomes de objetos pré-definidos no CorelDRAW) e **repassar** para o molde padrão da empresa.  
-> **Processo**: O script **Encaixar** identifica os elementos pelos nomes pré-definidos nos moldes e executa um processo automático para encaixá-los corretamente no molde da empresa.  
-> **Observação**: Ainda é necessária uma conferência final (ajuste fino) depois do encaixe automático.
+> **Processo**: O script **Encaixar** identifica os elementos pelos nomes pré-definidos nos moldes e realiza um processo automático para encaixá-los corretamente no molde da empresa.  
+> **Observação**: Ainda é necessária uma conferência final (ajuste fino) após o encaixe automático.
 
 ---
 
@@ -46,30 +48,29 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 
 ![Uniforme](https://github.com/user-attachments/assets/69927870-de12-42ac-85b2-4c82bd80eb04)
 
-> **Função**: Inserir **nomes** e **quantidades** em uniformes esportivos, usando um molde de referência.  
+> **Função**: Inserir **nomes** e **quantidades** em uniformes esportivos, utilizando um molde de referência.  
 > **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e quantidades).  
-> **Processo**: No script **Uniforme**, há um menu de input para inserir os dados específicos de cada uniforme, como nome e número, além de configurações para iniciar, pausar e finalizar o processo.
+> **Processo**: No script **Uniforme**, há um menu de input para inserir os dados específicos de cada uniforme, como nome, número e outras configurações para iniciar, pausar e finalizar o processo.
 
-![2](https://github.com/user-attachments/assets/94a55543-f631-44f8-9a38-1251fabb246b)
 ![1](https://github.com/user-attachments/assets/ef7ba821-7b5e-4e02-8951-93299c62b500)
+![2](https://github.com/user-attachments/assets/94a55543-f631-44f8-9a38-1251fabb246b)
 
 ---
 
 ## Recursos Adicionais
 
 - **Slider de Velocidade**: Controla o tempo de espera (`time.sleep`) em alguns scripts, como *Encaixar* e *Repassar*. Você pode ajustar entre **0.1 e 1.5 segundos** conforme a estabilidade ou velocidade desejada.
-- **Botão de Interromper Scripts**: Encerra qualquer script em execução. Útil se algo não saiu como esperado ou se você precisa cancelar a automação.
-- **Minimizar para Bandeja**: Esconde a janela principal, deixando apenas um ícone na bandeja do sistema. Dessa forma, você pode continuar usando o computador sem a janela atrapalhar.
+- **Botão de Interromper Scripts**: Encerra qualquer script em execução. Útil se algo não sair como esperado ou se você precisar cancelar a automação.
+- **Minimizar para Bandeja**: Esconde a janela principal, deixando apenas um ícone na bandeja do sistema, permitindo o uso contínuo do computador sem a interferência da janela.
 
 ---
 
 ## Observações Finais
 
 - Este projeto **foi criado especificamente** para **automatizar processos** de uma empresa de estamparia.  
-- Alguns scripts usam **coordenadas fixas** (PyAutoGUI), o que pode não funcionar bem em outros computadores ou com outras resoluções.  
-- No futuro, planeja-se melhorar a **portabilidade** e tornar as coordenadas dinâmicas, reduzindo erros.
+- Alguns scripts utilizam **coordenadas fixas** (PyAutoGUI), o que pode não funcionar corretamente em outros computadores ou com diferentes resoluções.  
+- No futuro, planeja-se melhorar a **portabilidade** e tornar as coordenadas dinâmicas, reduzindo os erros.
 
-**Sinta-se à vontade para explorar o código do `Controlador.py`**, que é a base da interface e da lógica de gerenciamento dos scripts.  
-Para sugestões ou contribuições, abra uma **Issue** ou faça um **Pull Request**.
+**Sinta-se à vontade para explorar os códigos do `Controlador.py` e do `Encaixar.py`**, que fazem parte desta demo de automação. Para sugestões ou contribuições, abra uma **Issue** ou faça um **Pull Request**.
 
 Obrigado por conferir o projeto!
