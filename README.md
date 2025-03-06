@@ -1,8 +1,6 @@
 # Automação de Processos para Estamparia
 
-## Menu do Controlador
-
-![4](https://github.com/user-attachments/assets/0a00e3b1-73e1-4853-b95a-f4049944c219)
+## Controlador
 
 Este projeto foi desenvolvido com o objetivo de **melhorar a produção da empresa**, **automatizando processos repetitivos** e acelerando o fluxo de trabalho. Ele contém um **Controlador** principal que gerencia quatro scripts específicos:
 
@@ -10,6 +8,8 @@ Este projeto foi desenvolvido com o objetivo de **melhorar a produção da empre
 - **Encaixar**
 - **Repassar**
 - **Uniforme**
+
+![4](https://github.com/user-attachments/assets/0a00e3b1-73e1-4853-b95a-f4049944c219)
 
 Além disso, há recursos adicionais como **slider** (para controlar velocidade de execução em alguns scripts), **botão de interromper scripts** e **botão para minimizar para a bandeja**.
 
