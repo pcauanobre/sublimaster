@@ -1,5 +1,9 @@
 # Automação de Processos para Estamparia
 
+## Menu do Controlador
+
+![4](https://github.com/user-attachments/assets/0a00e3b1-73e1-4853-b95a-f4049944c219)
+
 Este projeto foi desenvolvido com o objetivo de **melhorar a produção da empresa**, **automatizando processos repetitivos** e acelerando o fluxo de trabalho. Ele contém um **Controlador** principal que gerencia quatro scripts específicos:
 
 - **Colocar Quantidade**
@@ -43,8 +47,15 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 
 ![Uniforme](https://github.com/user-attachments/assets/69927870-de12-42ac-85b2-4c82bd80eb04)
 
-> **Função**: Inserir **nomes** e **números** em uniformes esportivos, usando um molde de referência.  
-> **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e números). É semelhante ao “Repassar”, mas voltado especificamente para uniformes e campos de personalização.
+> **Função**: Inserir **nomes** e **quantidades** em uniformes esportivos, usando um molde de referência.  
+> **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e quantidades). É semelhante ao “Repassar”, mas voltado especificamente para uniformes e campos de personalização.
+
+*Possui um menu de input para inserir tanto nomes quanto quantidades de cada uniforme.*
+
+![2](https://github.com/user-attachments/assets/94a55543-f631-44f8-9a38-1251fabb246b)
+![1](https://github.com/user-attachments/assets/ef7ba821-7b5e-4e02-8951-93299c62b500)
+
+### Possível GIF de Demonstração
 
 ---
 
@@ -63,6 +74,6 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 - No futuro, planeja-se melhorar a **portabilidade** e tornar as coordenadas dinâmicas, reduzindo erros.
 
 **Sinta-se à vontade para explorar o código do `Controlador.py`**, que é a base da interface e da lógica de gerenciamento dos scripts.  
-Para sugestões ou contribuições, abra uma **Issue** ou faça um **Pull Request**.  
+Para sugestões ou contribuições, abra uma **Issue** ou faça um **Pull Request**.
 
 Obrigado por conferir o projeto!
