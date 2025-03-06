@@ -13,6 +13,8 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 
 ## 1. Colocar Quantidade
 
+![ColocarQuantidade](https://github.com/user-attachments/assets/95dd790a-8f16-4fa8-8f2b-719dc0566c9d)
+
 > **Função**: Facilitar a colocação de quantidades em um programa específico (que prepara arquivos para impressão).  
 > **Observação**: Este script depende de **coordenadas fixas** (via PyAutoGUI), então **pode apresentar erros** em outros computadores com resoluções diferentes. No futuro, a ideia é ajustar para torná-lo mais universal.
 
