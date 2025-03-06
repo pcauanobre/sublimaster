@@ -60,7 +60,6 @@ Além disso, há recursos adicionais como **slider** (para controlar a velocidad
 
 ## Recursos Adicionais
 
-- **Slider de Velocidade**: Controla o tempo de espera (`time.sleep`) em alguns scripts, como *Encaixar* e *Repassar*. Você pode ajustar entre **0.1 e 1.5 segundos** conforme a estabilidade ou velocidade desejada.
 - **Botão de Interromper Scripts**: Encerra qualquer script em execução. Útil se algo não sair como esperado ou se você precisar cancelar a automação.
 - **Minimizar para Bandeja**: Esconde a janela principal, deixando apenas um ícone na bandeja do sistema, permitindo o uso contínuo do computador sem a interferência da janela.
 
@@ -70,7 +69,6 @@ Além disso, há recursos adicionais como **slider** (para controlar a velocidad
 
 - Este projeto **foi criado especificamente** para **automatizar processos** de uma empresa de estamparia.  
 - Alguns scripts utilizam **coordenadas fixas** (PyAutoGUI), o que pode não funcionar corretamente em outros computadores ou com diferentes resoluções.  
-- No futuro, planeja-se melhorar a **portabilidade** e tornar as coordenadas dinâmicas, reduzindo os erros.
 
 **Sinta-se à vontade para explorar os códigos do `Controlador.py` e do `Encaixar.py`**, que fazem parte desta demo de automação. Para sugestões ou contribuições, abra uma **Issue** ou faça um **Pull Request**.
 
