@@ -1,9 +1,8 @@
 # Automação de Processos para Estamparia
 
-## Controlador
-
 Este projeto foi desenvolvido com o objetivo de **melhorar a produção da empresa**, **automatizando processos repetitivos** e acelerando o fluxo de trabalho. Ele contém um **Controlador** principal que gerencia quatro scripts específicos:
 
+## Controlador
 - **Colocar Quantidade**
 - **Encaixar**
 - **Repassar**
