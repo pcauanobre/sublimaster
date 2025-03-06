@@ -21,7 +21,8 @@ Além disso, há recursos adicionais como **slider** (para controlar a velocidad
 ![ColocarQuantidade](https://github.com/user-attachments/assets/95dd790a-8f16-4fa8-8f2b-719dc0566c9d)
 
 > **Função**: Facilitar a impressão dos arquivos através de um programa específico.  
-> **Observação**: Este script depende de **coordenadas fixas** (via PyAutoGUI), podendo apresentar erros em outros computadores com resoluções diferentes. No futuro, a ideia é ajustá-lo para torná-lo mais universal.
+> **Processo**: Este script realiza um mapeamento prévio dos cliques necessários para que, em seguida, o PyAutoGUI possa inserir as quantidades corretas automaticamente.  
+> **Observação**: É necessário definir as quantidades para os diferentes tamanhos, de acordo com cada pedido. Como o script depende de **coordenadas fixas**, ele pode apresentar erros em computadores com resoluções diferentes. No futuro, a ideia é ajustá-lo para torná-lo mais universal.
 
 ---
 
