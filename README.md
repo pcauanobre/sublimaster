@@ -1,6 +1,6 @@
 # Automação de Processos para Estamparia
 
-Este projeto foi desenvolvido com o objetivo de melhorar a produção da empresa, automatizando processos repetitivos e acelerando o fluxo de trabalho. Ele foi desenvolvido em Python, utilizando bibliotecas como pywin32 para comunicação com o CorelDRAW e pyautogui para automação de interface. Além disso, foram utilizados scripts em VBA para automação interna dentro do CorelDRAW. O projeto contém um Controlador principal que gerencia quatro scripts específicos.
+Este projeto foi desenvolvido com o objetivo de melhorar a produção da empresa, automatizando processos repetitivos e acelerando o fluxo de trabalho. Ele foi desenvolvido em Python, utilizando bibliotecas como pywin32 para comunicação com o CorelDRAW e pyautogui para automação de interface e execução de atalhos. Além disso, foram utilizados scripts em VBA para automação interna dentro do CorelDRAW. O projeto contém um Controlador principal que gerencia quatro scripts específicos.
 
 ## Controlador
 - **Colocar Quantidade**
