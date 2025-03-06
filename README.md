@@ -18,39 +18,33 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 > **Função**: Facilitar a colocação de quantidades em um programa específico (que prepara arquivos para impressão).  
 > **Observação**: Este script depende de **coordenadas fixas** (via PyAutoGUI), então **pode apresentar erros** em outros computadores com resoluções diferentes. No futuro, a ideia é ajustar para torná-lo mais universal.
 
-### Possível GIF de Demonstração
-*(Aqui você pode inserir um GIF mostrando o “Colocar Quantidade” em ação.)*
-
-*(Exemplo de placeholders para GIFs.)*
-
 ---
 
 ## 2. Encaixar
 
+![Encaixar](https://github.com/user-attachments/assets/cf4730c3-c662-4d29-be86-4f2f893a10bd)
+
 > **Função**: Pegar o mockup (enviado ao cliente, em vetor e com nomes de objetos pré-definidos no CorelDRAW) e **repassar** para o molde padrão da empresa.  
 > **Observação**: Ainda é necessária uma conferência final (ajuste fino) depois do encaixe automático.
-
-### Possível GIF de Demonstração
-
 
 ---
 
 ## 3. Repassar
 
+![Repassar](https://github.com/user-attachments/assets/f6a4c64a-a7df-42ee-9878-3c7e86eb0111)
+
 > **Função**: Repassar a arte já encaixada para **demais moldes**, tendo um deles como referência principal. É útil quando existem variações de molde (por exemplo, tamanhos ou modelos diferentes) que devem receber a mesma arte base.
 
 ### Possível GIF de Demonstração
-
 
 ---
 
 ## 4. Uniforme
 
+![Uniforme](https://github.com/user-attachments/assets/69927870-de12-42ac-85b2-4c82bd80eb04)
+
 > **Função**: Inserir **nomes** e **números** em uniformes esportivos, usando um molde de referência.  
 > **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e números). É semelhante ao “Repassar”, mas voltado especificamente para uniformes e campos de personalização.
-
-### Possível GIF de Demonstração
-
 
 ---
 
