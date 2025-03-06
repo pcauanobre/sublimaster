@@ -28,6 +28,7 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 ![Encaixar](https://github.com/user-attachments/assets/cf4730c3-c662-4d29-be86-4f2f893a10bd)
 
 > **Função**: Pegar o mockup (enviado ao cliente, em vetor e com nomes de objetos pré-definidos no CorelDRAW) e **repassar** para o molde padrão da empresa.  
+> **Processo**: O script **Encaixar** identifica os elementos pelos nomes pré-definidos nos moldes e executa um processo automático para encaixá-los corretamente no molde da empresa.  
 > **Observação**: Ainda é necessária uma conferência final (ajuste fino) depois do encaixe automático.
 
 ---
@@ -36,9 +37,8 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 
 ![Repassar](https://github.com/user-attachments/assets/f6a4c64a-a7df-42ee-9878-3c7e86eb0111)
 
-> **Função**: Repassar a arte já encaixada para **demais moldes**, tendo um deles como referência principal. É útil quando existem variações de molde (por exemplo, tamanhos ou modelos diferentes) que devem receber a mesma arte base.
-
-### Possível GIF de Demonstração
+> **Função**: Repassar a arte já encaixada para **demais moldes**, tendo um deles como referência principal.  
+> **Processo**: O script **Repassar** utiliza um molde base como referência para aplicar a arte aos demais moldes, garantindo uniformidade entre os diferentes modelos.
 
 ---
 
@@ -47,14 +47,11 @@ Além disso, há recursos adicionais como **slider** (para controlar velocidade 
 ![Uniforme](https://github.com/user-attachments/assets/69927870-de12-42ac-85b2-4c82bd80eb04)
 
 > **Função**: Inserir **nomes** e **quantidades** em uniformes esportivos, usando um molde de referência.  
-> **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e quantidades). É semelhante ao “Repassar”, mas voltado especificamente para uniformes e campos de personalização.
-
-*Possui um menu de input para inserir tanto nomes quanto quantidades de cada uniforme.*
+> **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e quantidades).  
+> **Processo**: No script **Uniforme**, há um menu de input para inserir os dados específicos de cada uniforme, como nome e número, além de configurações para iniciar, pausar e finalizar o processo.
 
 ![2](https://github.com/user-attachments/assets/94a55543-f631-44f8-9a38-1251fabb246b)
 ![1](https://github.com/user-attachments/assets/ef7ba821-7b5e-4e02-8951-93299c62b500)
-
-### Possível GIF de Demonstração
 
 ---
 
