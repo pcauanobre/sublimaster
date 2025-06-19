@@ -1,5 +1,5 @@
 # (EN-US)
-# Automation of Processes for Printing Shop 
+# Automation of Processes for Sublimation Company.
 
 This project was developed with the goal of improving the company's production by automating repetitive processes and speeding up the workflow. It was built in Python, using libraries like pywin32 for communication with CorelDRAW and pyautogui for UI automation and shortcut execution. In addition, VBA scripts were used for internal automation within CorelDRAW. The project contains a main Controller that manages four specific scripts.
 
