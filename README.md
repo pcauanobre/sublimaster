@@ -1,4 +1,5 @@
-# Automation of Processes for Printing Shop (EN Version)
+# (EN-US)
+# Automation of Processes for Printing Shop 
 
 This project was developed with the goal of improving the company's production by automating repetitive processes and speeding up the workflow. It was built in Python, using libraries like pywin32 for communication with CorelDRAW and pyautogui for UI automation and shortcut execution. In addition, VBA scripts were used for internal automation within CorelDRAW. The project contains a main Controller that manages four specific scripts.
 
@@ -75,8 +76,8 @@ It also includes additional features such as a **slider** (to control the execut
 Thanks for checking out the project!
 
 ---
-
-# Automação de Processos para Estamparia (PT Version)
+# (PT-BR)
+# Automação de Processos para Estamparia 
 
 Este projeto foi desenvolvido com o objetivo de melhorar a produção da empresa, automatizando processos repetitivos e acelerando o fluxo de trabalho. Ele foi desenvolvido em Python, utilizando bibliotecas como pywin32 para comunicação com o CorelDRAW e pyautogui para automação de interface e execução de atalhos. Além disso, foram utilizados scripts em VBA para automação interna dentro do CorelDRAW. O projeto contém um Controlador principal que gerencia quatro scripts específicos.
 
