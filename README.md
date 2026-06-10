@@ -1,154 +1,127 @@
 # (EN-US)
-# Automation of Processes for Sublimation Company.
 
-This project was developed with the goal of improving the company's production by automating repetitive processes and speeding up the workflow. It was built in Python, using libraries like pywin32 for communication with CorelDRAW and pyautogui for UI automation and shortcut execution. In addition, VBA scripts were used for internal automation within CorelDRAW. The project contains a main Controller that manages four specific scripts.
+# SubliMaster — CorelDRAW automation for sublimation print shops
 
-## Controller
-- **Set Quantity**
-- **Fit Layout**
-- **Transfer**
-- **Uniforms**
+> **📌 View-only repository.** SubliMaster is a commercial product and its full source code is private. This repo exists to **showcase the project** — the README below shows what it does, and the `.py` files here are early-generation sample scripts kept for reference. The product itself is distributed as a Windows installer at **[sublimaster-releases.vercel.app](https://sublimaster-releases.vercel.app)**.
 
-The **Controller** has an intuitive graphical interface with dedicated buttons that execute each script, allowing the user to start processes with a simple click.
+![SubliMaster](media/capa.png)
 
-![4](https://github.com/user-attachments/assets/0a00e3b1-73e1-4853-b95a-f4049944c219)
+**SubliMaster** is a Windows desktop app installed on the print shop's machine. It talks directly to CorelDRAW (COM automation + 30 VBA macros) and turns a manual workflow of **over an hour per order into a few minutes**: it lays out the templates by size, carries the front artwork to the back and sleeves, exports every piece named and organized by client, and connects everything to the plotter's print queue.
 
-It also includes additional features such as a **slider** (to control the execution speed in some scripts), a **stop script button**, and a **minimize to tray button**.
+It is sold as a product: license keys bound to the machine, per-user permissions and automatic updates — the client clicks a popup and gets the new version.
 
 ---
 
-## 1. Set Quantity
+## 1. Fit uniforms — the whole order assembled on its own
 
-![ColocarQuantidade](https://github.com/user-attachments/assets/95dd790a-8f16-4fa8-8f2b-719dc0566c9d)
+![Fit uniforms](media/uniforme.gif)
 
-> **Function**: Facilitate file printing through a specific program.  
-> **Process**: This script performs a preliminary mapping of the necessary clicks so that PyAutoGUI can then automatically input the correct quantities.  
-> **Note**: It is necessary to define quantities for the different sizes, according to each order. Since the script depends on **fixed coordinates**, it may present errors on computers with different screen resolutions. In the future, the idea is to adjust it to make it more universal.
+The operator picks the garment type (polo, fitted tee, tank top...), long sleeves or not, and the quantities per size. SubliMaster duplicates the templates in Corel, creates the collars, aligns and renames every piece — S, M, L, XL, XXL and kids' sizes — with a progress bar and ETA. What used to be half an hour of Ctrl+D becomes seconds.
 
 ---
 
-## 2. Fit Layout
+## 2. Propagate — the front artwork covers the whole garment
 
-![Encaixar](https://github.com/user-attachments/assets/cf4730c3-c662-4d29-be86-4f2f893a10bd)
+![Propagate](media/repassar.gif)
 
-> **Function**: Take the mockup (sent to the client, in vector format and with predefined object names in CorelDRAW) and **fit** it into the company's standard template.  
-> **Process**: The **Fit Layout** script identifies elements by their predefined names in the templates and automatically aligns them correctly into the company’s template.  
-> **Note**: A final check (fine adjustment) is still needed after automatic fitting.
+With the front design ready, one click carries the artwork to the back and sleeves in the right order, using PowerClip and automatic centering through VBA macros. No copying, pasting and eyeballing — every part comes out consistent.
 
 ---
 
-## 3. Transfer
+## 3. Export — every piece becomes an organized file
 
-![Repassar](https://github.com/user-attachments/assets/f6a4c64a-a7df-42ee-9878-3c7e86eb0111)
+![Export](media/exportar.gif)
 
-> **Function**: Transfer the already aligned artwork to **other templates**, using one of them as the main reference.  
-> **Process**: The **Transfer** script uses a base template as reference to apply the artwork to other templates, ensuring consistency across different models.
-
----
-
-## 4. Uniforms
-
-![Uniforme](https://github.com/user-attachments/assets/69927870-de12-42ac-85b2-4c82bd80eb04)
-
-> **Function**: Insert **names** and **quantities** on sports uniforms, using a reference template.  
-> **Differential**: It can **automatically duplicate** the object for multiple uniforms, based on the provided inputs (number of shirts, names, and quantities).  
-> **Process**: In the **Uniforms** script, there is an input menu to insert specific data for each uniform, such as name, number, and other settings to start, pause, and finish the process.
-
-![1](https://github.com/user-attachments/assets/ef7ba821-7b5e-4e02-8951-93299c62b500)  
-![2](https://github.com/user-attachments/assets/94a55543-f631-44f8-9a38-1251fabb246b)
+The script reads the standardized object names, groups them by model and size, isolates each piece on screen and exports the JPGs one by one — already named (“MODEL 1 - M FRONT”) and in the client's folder. Hundreds of files ready for production without touching the mouse.
 
 ---
 
-## Additional Features
+## 4. Print queue — the plotter never sits idle
 
-- **Stop Script Button**: Stops any script in progress. Useful if something goes wrong or you need to cancel the automation.
-- **Minimize to Tray**: Hides the main window, leaving only an icon in the system tray, allowing continued use of the computer without interference from the app window.
+![Print queue](media/fila-impressao.gif)
+
+A visual manager queries the shop's order API, builds the queue and drives the plotter's Production Manager through UI automation. When the printer is free, it sends the next job on its own — with per-order history and timings.
+
+---
+
+## Under the hood
+
+- **Python 3.12 + Tkinter**, talking to CorelDRAW over **COM** and firing **30 VBA macros** compiled into a `.gms`
+- Single `.exe` via **PyInstaller**, with an **Inno Setup** installer that detects the machine's CorelDRAW
+- **Firebase** handles licenses (machine-bound keys, NTP date validation against clock tampering), per-user script permissions and update notices
+- **GitHub Actions** builds and publishes every release — the app downloads the new installer, uninstalls the old version and relaunches itself, all silently
+- PID-based lock system keeps multiple automations from fighting over the same CorelDRAW instance
+
+| | |
+|---|---|
+| **50–70×** | faster than the manual workflow |
+| **26k+** | lines of Python + VBA |
+| **39** | releases shipped via auto-update |
+| **15** | template sizes, from kids' to 3XL |
+
+🔗 **Product page / download:** [sublimaster-releases.vercel.app](https://sublimaster-releases.vercel.app)
 
 ---
 
-## Final Notes
-
-- This project **was specifically created** to **automate processes** for a printing company.  
-- Some scripts use **fixed coordinates** (PyAutoGUI), which may not work properly on other computers or with different screen resolutions.  
-
-**Feel free to explore the `Controlador.py` and `Encaixar.py` code**, which are part of this automation demo. For suggestions or contributions, open an **Issue** or make a **Pull Request**.
-
-Thanks for checking out the project!
-
----
 # (PT-BR)
-# Automação de Processos para Estamparia 
 
-Este projeto foi desenvolvido com o objetivo de melhorar a produção da empresa, automatizando processos repetitivos e acelerando o fluxo de trabalho. Ele foi desenvolvido em Python, utilizando bibliotecas como pywin32 para comunicação com o CorelDRAW e pyautogui para automação de interface e execução de atalhos. Além disso, foram utilizados scripts em VBA para automação interna dentro do CorelDRAW. O projeto contém um Controlador principal que gerencia quatro scripts específicos.
+# SubliMaster — Automação de CorelDRAW pra gráficas de sublimação
 
-## Controlador
-- **Colocar Quantidade**
-- **Encaixar**
-- **Repassar**
-- **Uniforme**
+> **📌 Repositório só de visualização.** O SubliMaster é um produto comercial e o código-fonte completo é privado. Este repo existe pra **apresentar o projeto** — o README abaixo mostra o que ele faz, e os arquivos `.py` daqui são scripts de amostra da primeira geração, mantidos como referência. O produto em si é distribuído como instalador Windows em **[sublimaster-releases.vercel.app](https://sublimaster-releases.vercel.app)**.
 
-O **Controlador** possui uma interface gráfica intuitiva com botões dedicados que executam cada um dos scripts, permitindo ao usuário iniciar os processos com um simples clique.
+![SubliMaster](media/capa.png)
 
-![4](https://github.com/user-attachments/assets/0a00e3b1-73e1-4853-b95a-f4049944c219)
+O **SubliMaster** é um aplicativo desktop Windows instalado na máquina da gráfica. Ele conversa direto com o CorelDRAW (automação COM + 30 macros VBA) e transforma um fluxo manual de **mais de uma hora por pedido em poucos minutos**: monta os moldes por tamanho, leva a arte da frente pra costas e mangas, exporta cada peça nomeada e organizada por cliente, e conecta tudo à fila de impressão da plotter.
 
-Além disso, há recursos adicionais como **slider** (para controlar a velocidade de execução em alguns scripts), **botão de interromper scripts** e **botão para minimizar para a bandeja**.
+É vendido como produto: licença por chave amarrada à máquina, permissões por usuário e atualização automática — o cliente clica num popup e recebe a versão nova.
 
 ---
 
-## 1. Colocar Quantidade
+## 1. Encaixar uniforme — o pedido inteiro montado sozinho
 
-![ColocarQuantidade](https://github.com/user-attachments/assets/95dd790a-8f16-4fa8-8f2b-719dc0566c9d)
+![Encaixar uniforme](media/uniforme.gif)
 
-> **Função**: Facilitar a impressão dos arquivos através de um programa específico.  
-> **Processo**: Este script realiza um mapeamento prévio dos cliques necessários para que, em seguida, o PyAutoGUI possa inserir as quantidades corretas automaticamente.  
-> **Observação**: É necessário definir as quantidades para os diferentes tamanhos, de acordo com cada pedido. Como o script depende de **coordenadas fixas**, ele pode apresentar erros em computadores com resoluções diferentes. No futuro, a ideia é ajustá-lo para torná-lo mais universal.
+O operador informa o tipo de peça (polo, babylook, regata...), se tem manga longa e as quantidades por tamanho. O SubliMaster duplica os moldes no Corel, cria as golas, alinha e renomeia cada peça — P, M, G, GG, XG e infantis — com barra de progresso e tempo estimado. O que era meia hora de Ctrl+D vira segundos.
 
 ---
 
-## 2. Encaixar
+## 2. Repassar — a arte da frente vai pra peça inteira
 
-![Encaixar](https://github.com/user-attachments/assets/cf4730c3-c662-4d29-be86-4f2f893a10bd)
+![Repassar](media/repassar.gif)
 
-> **Função**: Pegar o mockup (enviado ao cliente, em vetor e com nomes de objetos pré-definidos no CorelDRAW) e **repassar** para o molde padrão da empresa.  
-> **Processo**: O script **Encaixar** identifica os elementos pelos nomes pré-definidos nos moldes e realiza um processo automático para encaixá-los corretamente no molde da empresa.  
-> **Observação**: Ainda é necessária uma conferência final (ajuste fino) após o encaixe automático.
+Com o design pronto na frente, um clique propaga a arte pra costas e mangas na ordem certa, usando PowerClip e centralização automática via macros VBA. Nada de copiar, colar e alinhar no olho — todas as partes saem consistentes entre si.
 
 ---
 
-## 3. Repassar
+## 3. Exportar — cada peça vira arquivo organizado
 
-![Repassar](https://github.com/user-attachments/assets/f6a4c64a-a7df-42ee-9878-3c7e86eb0111)
+![Exportar](media/exportar.gif)
 
-> **Função**: Repassar a arte já encaixada para **demais moldes**, tendo um deles como referência principal.  
-> **Processo**: O script **Repassar** utiliza um molde base como referência para aplicar a arte aos demais moldes, garantindo uniformidade entre os diferentes modelos.
-
----
-
-## 4. Uniforme
-
-![Uniforme](https://github.com/user-attachments/assets/69927870-de12-42ac-85b2-4c82bd80eb04)
-
-> **Função**: Inserir **nomes** e **quantidades** em uniformes esportivos, utilizando um molde de referência.  
-> **Diferencial**: Ele pode **duplicar automaticamente** o objeto para vários uniformes, de acordo com os inputs fornecidos (quantidade de camisas, nomes e quantidades).  
-> **Processo**: No script **Uniforme**, há um menu de input para inserir os dados específicos de cada uniforme, como nome, número e outras configurações para iniciar, pausar e finalizar o processo.
-
-![1](https://github.com/user-attachments/assets/ef7ba821-7b5e-4e02-8951-93299c62b500)  
-![2](https://github.com/user-attachments/assets/94a55543-f631-44f8-9a38-1251fabb246b)
+O script lê os nomes padronizados dos objetos, agrupa por modelo e tamanho, isola cada peça na tela e exporta os JPGs um a um — já nomeados (“MODELO 1 - M FRENTE”) e na pasta do cliente. Centenas de arquivos prontos pro fluxo de produção sem tocar no mouse.
 
 ---
 
-## Recursos Adicionais
+## 4. Fila de impressão — a plotter nunca fica parada
 
-- **Botão de Interromper Scripts**: Encerra qualquer script em execução. Útil se algo não sair como esperado ou se você precisar cancelar a automação.
-- **Minimizar para Bandeja**: Esconde a janela principal, deixando apenas um ícone na bandeja do sistema, permitindo o uso contínuo do computador sem a interferência da janela.
+![Fila de impressão](media/fila-impressao.gif)
+
+Um gestor visual consulta a API de pedidos da gráfica, monta a fila e comanda o Production Manager da plotter por automação de interface. Se a impressora está livre, ele envia o próximo trabalho sozinho — com histórico de O.S. e tempos de cada etapa.
 
 ---
 
-## Observações Finais
+## Por dentro
 
-- Este projeto **foi criado especificamente** para **automatizar processos** de uma empresa de estamparia.  
-- Alguns scripts utilizam **coordenadas fixas** (PyAutoGUI), o que pode não funcionar corretamente em outros computadores ou com diferentes resoluções.  
+- **Python 3.12 + Tkinter**, falando com o CorelDRAW por **COM** e disparando **30 macros VBA** compiladas num `.gms`
+- Um único `.exe` via **PyInstaller**, com instalador **Inno Setup** que detecta o CorelDRAW da máquina
+- **Firebase** cuida das licenças (chave amarrada à máquina, validação de data por NTP contra relógio manipulado), das permissões de script por usuário e do aviso de atualização
+- **GitHub Actions** builda e publica cada release — o app baixa o instalador novo, desinstala a versão antiga e se relança sozinho, tudo silencioso
+- Sistema de locks por PID impede que automações rodem por cima umas das outras no mesmo CorelDRAW
 
-**Sinta-se à vontade para explorar os códigos do `Controlador.py` e do `Encaixar.py`**, que fazem parte desta demo de automação. Para sugestões ou contribuições, abra uma **Issue** ou faça um **Pull Request**.
+| | |
+|---|---|
+| **50–70×** | mais rápido que o fluxo manual |
+| **26 mil+** | linhas de Python + VBA |
+| **39** | releases entregues por auto-update |
+| **15** | tamanhos de molde, do infantil ao XG2 |
 
-Obrigado por conferir o projeto!
+🔗 **Página do produto / download:** [sublimaster-releases.vercel.app](https://sublimaster-releases.vercel.app)
